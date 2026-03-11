@@ -131,7 +131,6 @@
 
         .status-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; }
         .badge-completed { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
-        .badge-progress { background: var(--main-blue-light); color: var(--main-blue); border: 1px solid rgba(56, 189, 248, 0.3); }
 
         .progress-wrap { margin-top: 16px; border-top: 1px solid var(--card-border); padding-top: 12px; }
         .progress-header { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600; }
@@ -156,6 +155,12 @@
         .modal-content { background: var(--card-bg); border: 1px solid var(--main-blue); border-radius: 20px; padding: 30px; width: 90%; max-width: 400px; text-align: center; position: relative; animation: fadeIn 0.3s; }
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: var(--text-muted); cursor: none; }
         .close-btn:hover { color: red; }
+
+        /* Toast Notification */
+        .toast { visibility: hidden; min-width: 250px; background-color: var(--card-bg); border: 1px solid var(--main-blue); color: var(--text-main); text-align: center; border-radius: 12px; padding: 16px; position: fixed; z-index: 10000; left: 50%; bottom: 30px; transform: translateX(-50%); font-weight: 600; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3); backdrop-filter: blur(10px); }
+        .toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
 
         /* Filters */
         .filter-btn { background: transparent; border: 1px solid var(--card-border); color: var(--text-muted); padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; cursor: none; margin-right: 5px; margin-bottom: 15px; transition: 0.3s; }
@@ -202,7 +207,7 @@
                     <div class="icon-box"><i class="fas fa-bolt"></i></div>
                     <h2 class="card-title txt-gradient lang-text" data-en="Latest" data-ar="أحدث النشاطات">Latest</h2>
                 </div>
-                <p class="card-desc lang-text" data-en="CTF, GitHub repos, and Write-ups." data-ar="تحديات، مستودعات جيت هاب، ومقالات.">CTF, GitHub repos, and Write-ups.</p>
+                <p class="card-desc lang-text" data-en="CTF, GitHub repos, CV, and Write-ups." data-ar="تحديات، مستودعات جيت هاب، السيرة الذاتية ومقالات.">CTF, GitHub repos, CV, and Write-ups.</p>
             </div>
 
             <div class="card menu-card" onclick="openView('learning')">
@@ -277,7 +282,6 @@
             </div>
 
             <div class="card no-hover">
-                <div class="status-badge badge-progress"><i class="fas fa-spinner fa-spin"></i> <span class="lang-text" data-en="In Progress" data-ar="قيد الدراسة">In Progress</span></div>
                 <h2 class="item-title">Network</h2>
                 <div class="item-org">TryHackMe</div>
                 <div class="progress-wrap">
@@ -287,7 +291,6 @@
             </div>
 
             <div class="card no-hover">
-                <div class="status-badge badge-progress"><i class="fas fa-spinner fa-spin"></i> <span class="lang-text" data-en="In Progress" data-ar="قيد الدراسة">In Progress</span></div>
                 <h2 class="item-title">Python</h2>
                 <div class="item-org lang-text" data-en="Programming Language" data-ar="لغة برمجة">Programming Language</div>
                 <div class="progress-wrap">
@@ -297,7 +300,6 @@
             </div>
 
             <div class="card no-hover">
-                <div class="status-badge badge-progress"><i class="fas fa-spinner fa-spin"></i> <span class="lang-text" data-en="In Progress" data-ar="قيد الدراسة">In Progress</span></div>
                 <h2 class="item-title">CompTIA Linux+</h2>
                 <div class="item-org">CompTIA</div>
                 <div class="progress-wrap">
@@ -307,7 +309,6 @@
             </div>
 
             <div class="card no-hover">
-                <div class="status-badge badge-progress"><i class="fas fa-spinner fa-spin"></i> <span class="lang-text" data-en="In Progress" data-ar="قيد الدراسة">In Progress</span></div>
                 <h2 class="item-title">CompTIA Security+</h2>
                 <div class="item-org">CompTIA</div>
                 <div class="progress-wrap">
@@ -317,7 +318,6 @@
             </div>
 
             <div class="card no-hover">
-                <div class="status-badge badge-progress"><i class="fas fa-spinner fa-spin"></i> <span class="lang-text" data-en="In Progress" data-ar="قيد الدراسة">In Progress</span></div>
                 <h2 class="item-title">eJPT v1</h2>
                 <div class="item-org">eLearnSecurity</div>
                 <div class="progress-wrap">
@@ -355,6 +355,14 @@
                     <h2 class="item-title lang-text" data-en="Write-ups" data-ar="كتاباتي" style="margin:0;">Write-ups</h2>
                 </div>
                 <i class="fas fa-chevron-right" style="color:var(--text-muted);"></i>
+            </div>
+
+            <div class="card" onclick="showSoonToast()" style="display:flex; align-items:center; justify-content:space-between;">
+                <div style="display:flex; align-items:center; gap:15px;">
+                    <div class="icon-box" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;"><i class="fas fa-file-pdf"></i></div>
+                    <h2 class="item-title lang-text" data-en="My CV" data-ar="سيرتي الذاتية" style="margin:0;">My CV</h2>
+                </div>
+                <i class="fas fa-download" style="color:var(--text-muted);"></i>
             </div>
         </div>
 
@@ -456,6 +464,8 @@
         </div>
 
     </div>
+
+    <div id="soonToast" class="toast">Soon...</div>
 
     <div id="certModal" class="modal">
         <div class="modal-content">
@@ -560,6 +570,14 @@
         }
         window.onclick = function(event) {
             if (event.target == document.getElementById('certModal')) closeCertModal();
+        }
+
+        // Toast Logic (Soon Notification)
+        function showSoonToast() {
+            const toast = document.getElementById("soonToast");
+            toast.innerText = currentLang === 'en' ? 'Soon...' : 'قريباً...';
+            toast.className = "toast show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
         // CTF Filter Logic
