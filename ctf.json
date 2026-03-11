@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Network Fundamentals",
+    "platform": "TryHackMe",
+    "url": "https://tryhackme.com/module/network-fundamentals",
+    "status": "completed"
+  },
+  {
+    "name": "Pickle Rick",
+    "platform": "TryHackMe",
+    "url": "https://tryhackme.com/room/picklerick",
+    "status": "completed"
+  }
+]
