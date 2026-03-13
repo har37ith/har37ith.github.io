@@ -13,7 +13,6 @@
 
     <style>
         :root {
-            /* Dark Theme (Default) */
             --bg-color: #0b0d13;
             --surface-color: #131620;
             --surface-hover: #1b1e2a;
@@ -28,7 +27,6 @@
             --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Light Theme Variables */
         :root[data-theme="light"] {
             --bg-color: #f8fafc;
             --surface-color: #ffffff;
@@ -62,7 +60,6 @@
 
         .container { width: 100%; max-width: 680px; padding: 30px 20px 60px 20px; position: relative; }
 
-        /* Top Header */
         .header { 
             display: flex; 
             justify-content: space-between; 
@@ -79,12 +76,10 @@
         }
         .icon-btn:hover { background: var(--surface-hover); border-color: var(--text-primary); }
 
-        /* View System */
         .view { display: none; animation: fadeIn 0.4s ease forwards; }
         .view.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Section Titles & Headers */
         .page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; }
         .back-btn { width: 44px; height: 44px; padding: 0; border-radius: 12px; font-size: 1.2rem; }
         body[dir="rtl"] .back-btn i { transform: scaleX(-1); }
@@ -92,7 +87,6 @@
         .section-title { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 10px; margin: 0;}
         .section-title i { color: var(--accent-color); font-size: 1.5rem; font-weight: normal; }
 
-        /* Hero Profile */
         .profile-wrapper { display: flex; align-items: center; gap: 24px; margin-bottom: 40px; }
         .profile-img { width: 120px; height: 120px; border-radius: 20px; object-fit: cover; border: 2px solid var(--border-color); box-shadow: 0 10px 30px var(--accent-glow); }
         .profile-info h1 { font-size: 2rem; font-weight: 800; line-height: 1.2; margin-bottom: 8px; }
@@ -100,7 +94,6 @@
         .badges { display: flex; flex-wrap: wrap; gap: 8px; }
         .badge { background: rgba(14, 165, 233, 0.1); color: var(--accent-color); border: 1px solid rgba(14, 165, 233, 0.2); padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 600; display: inline-block; }
 
-        /* Cards Base */
         .card { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; margin-bottom: 16px; transition: var(--transition-smooth); text-decoration: none; color: inherit; display: block; }
         .card.interactive { cursor: pointer; }
         .card.interactive:hover { border-color: rgba(14, 165, 233, 0.5); background: var(--surface-hover); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
@@ -108,7 +101,6 @@
         .card-title-small i { color: var(--accent-color); }
         .card-text { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; }
 
-        /* List Items */
         .list-item { display: flex; align-items: center; justify-content: space-between; padding: 20px; }
         .list-content { display: flex; align-items: center; gap: 16px; }
         .icon-box { width: 48px; height: 48px; border-radius: 12px; background: var(--bg-color); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--text-primary); transition: var(--transition-smooth); flex-shrink: 0; }
@@ -127,7 +119,6 @@
         .list-item:hover .arrow-icon { color: var(--accent-color); transform: translateX(5px); }
         body[dir="rtl"] .list-item:hover .arrow-icon { transform: translateX(-5px); }
 
-        /* Learning & Skills Progress */
         .progress-card { padding: 20px; direction: ltr; text-align: left; }
         .progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
         .cert-title { font-size: 1.05rem; font-weight: 700; }
@@ -137,7 +128,6 @@
         .progress-fill.completed { background: var(--success-color); }
         .status-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; background: rgba(16, 185, 129, 0.1); color: var(--success-color); border: 1px solid rgba(16, 185, 129, 0.2); }
         
-        /* Skills Specific Styles */
         .timeline-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; position: relative; }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent-color); margin-top: 6px; flex-shrink: 0; box-shadow: 0 0 8px var(--accent-glow); }
@@ -153,7 +143,6 @@
         .info-note i { color: var(--accent-color); font-size: 1.2rem; margin-top: 2px; }
         .info-note p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; font-weight: 500; }
 
-        /* Footer */
         footer { text-align: center; color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color); }
 
         @media (max-width: 500px) {
@@ -227,7 +216,7 @@
                 <div class="list-content">
                     <div class="icon-box icon-orange"><i class="ri-tools-line"></i></div>
                     <div>
-                        <div class="item-title lang-text" data-en="My Skills" data-ar="مهاراتي">Skills Me</div>
+                        <div class="item-title lang-text" data-en="Skills Me" data-ar="مهاراتي">Skills Me</div>
                         <div class="item-subtitle lang-text" data-en="Strengths, practical exp & goals" data-ar="نقاط القوة، الخبرة العملية والأهداف">Strengths, practical exp & goals</div>
                     </div>
                 </div>
@@ -331,13 +320,11 @@
                 <h2 class="section-title"><i class="ri-quill-pen-line"></i> <span class="lang-text" data-en="My Articles" data-ar="مقالاتي">My Articles</span></h2>
             </div>
             
-            <div class="card" style="text-align: center; border-color: rgba(245, 158, 11, 0.3);">
-                <i class="ri-rss-line" style="color: var(--warning-color); font-size: 2.5rem; margin-bottom: 10px; display: block;"></i>
-                <h3 class="lang-text" data-en="Coming Soon!" data-ar="قريباً!" style="margin-bottom: 8px;">Coming Soon!</h3>
-                <p class="lang-text" data-en="This section will be connected to an API to fetch my latest blog posts and security write-ups." data-ar="سيتم ربط هذا القسم لاحقاً عبر API لعرض أحدث مقالاتي وتقاريري الأمنية (Write-ups) تلقائياً." style="color: var(--text-secondary); font-size: 0.95rem;">
-                    This section will be connected to an API to fetch my latest blog posts and security write-ups.
-                </p>
-            </div>
+            <p class="lang-text" id="articles-loading" data-en="Fetching latest articles..." data-ar="جاري جلب أحدث المقالات..." style="color: var(--text-secondary); margin-bottom: 20px; text-align: center; font-weight: 500;">
+                Fetching latest articles...
+            </p>
+            
+            <div id="articles-container"></div>
         </div>
 
         <div id="view-github" class="view">
@@ -684,6 +671,7 @@
         // Language & Theme Logic
         let currentLang = 'en';
         let ghLoaded = false;
+        let articlesLoaded = false; // متغير جديد للتحقق من تحميل المقالات
 
         function applyLanguage() {
             document.body.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
@@ -698,6 +686,11 @@
         function toggleLanguage() {
             currentLang = (currentLang === 'en') ? 'ar' : 'en';
             applyLanguage();
+            // تحديث نصوص الأخطاء في حال تم التحميل مسبقاً وفشل
+            if(articlesLoaded) {
+                const el = document.getElementById('articles-empty-text');
+                if(el) el.innerText = currentLang === 'en' ? 'No articles published yet.' : 'لم يتم نشر أي مقالات بعد.';
+            }
         }
 
         function toggleTheme() {
@@ -722,13 +715,16 @@
                 target.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 
-                // Animate progress bars based on the view
+                // Animate progress bars
                 if (hash === 'learning') animateProgressBars('.learning-fill');
                 if (hash === 'ctf') animateProgressBars('.ctf-fill');
                 if (hash === 'skills') animateProgressBars('.skills-fill');
                 
-                // Fetch GitHub if opened
+                // Fetch GitHub Repos
                 if (hash === 'github' && !ghLoaded) fetchGitHubRepos();
+
+                // Fetch Articles (Issues)
+                if (hash === 'articles' && !articlesLoaded) fetchArticles();
 
             } else {
                 document.getElementById('view-dashboard').classList.add('active');
@@ -744,7 +740,77 @@
             });
         }
 
-        // GitHub API Fetch
+        // جلب المقالات (من GitHub Issues)
+        async function fetchArticles() {
+            const container = document.getElementById('articles-container');
+            const loading = document.getElementById('articles-loading');
+            try {
+                loading.style.display = 'block';
+                loading.innerText = currentLang === 'en' ? 'Fetching latest articles...' : 'جاري جلب أحدث المقالات...';
+                
+                // نستخدم API لجلب المشكلات المفتوحة (open)
+                const response = await fetch('https://api.github.com/repos/har37ith/Articles/issues?state=open');
+                if (!response.ok) throw new Error('API Error');
+                const issues = await response.json();
+                
+                loading.style.display = 'none';
+                container.innerHTML = '';
+                
+                // استبعاد الـ Pull Requests (لأن جيت هاب يعتبرها Issues برمجياً)
+                const articles = issues.filter(issue => !issue.pull_request);
+
+                if(articles.length === 0) {
+                     container.innerHTML = `
+                        <div class="card" style="text-align: center; border-color: rgba(14, 165, 233, 0.3);">
+                            <i class="ri-file-edit-line" style="color: var(--accent-color); font-size: 2.5rem; margin-bottom: 10px; display: block;"></i>
+                            <p id="articles-empty-text" style="color: var(--text-secondary); font-weight: 500;">
+                                ${currentLang === 'en' ? 'No articles published yet.' : 'لم يتم نشر أي مقالات بعد.'}
+                            </p>
+                            <a href="https://github.com/har37ith/Articles/issues" target="_blank" class="badge" style="text-decoration: none; border-color: var(--accent-color); padding: 6px 12px; margin-top: 10px;">
+                                Write First Article
+                            </a>
+                        </div>`;
+                     articlesLoaded = true;
+                     return;
+                }
+                
+                articles.forEach(article => {
+                    // استخراج مقتطف من المحتوى (بدون أكواد Markdown قدر الإمكان)
+                    let snippet = article.body ? article.body.replace(/[#_*>`\[\]]/g, '').substring(0, 110) + '...' : '';
+                    let date = new Date(article.created_at).toLocaleDateString(currentLang === 'en' ? 'en-US' : 'ar-EG', { year: 'numeric', month: 'short', day: 'numeric' });
+                    
+                    const card = `
+                    <a href="${article.html_url}" target="_blank" class="card interactive" style="display:block; direction: ltr; text-align: left;">
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+                            <h2 class="item-title" style="margin:0; font-size: 1.15rem; color: var(--accent-color);">
+                                ${article.title}
+                            </h2>
+                            <i class="ri-arrow-right-up-line" style="color: var(--text-secondary); font-size:1.1rem; flex-shrink: 0; margin-left: 10px;"></i>
+                        </div>
+                        <div style="margin-bottom: 12px; display: flex; gap: 10px; align-items: center;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);"><i class="ri-calendar-line"></i> ${date}</span>
+                            <span class="badge" style="font-size: 0.7rem; padding: 2px 6px;">Writeup</span>
+                        </div>
+                        <p class="card-text" style="font-size:0.9rem; margin:0;">${snippet}</p>
+                    </a>`;
+                    container.innerHTML += card;
+                });
+                articlesLoaded = true;
+            } catch (error) {
+                loading.style.display = 'none';
+                container.innerHTML = `
+                    <div class="card" style="text-align: center; border-color: rgba(244, 63, 94, 0.3);">
+                        <i class="ri-error-warning-line" style="color: #f43f5e; font-size: 2.5rem; margin-bottom: 10px; display: block;"></i>
+                        <p class="lang-text" data-en="Failed to fetch articles." data-ar="تعذر جلب المقالات." style="color: var(--text-secondary); font-weight: 500;">
+                            ${currentLang === 'en' ? 'Failed to fetch articles.' : 'تعذر جلب المقالات.'}
+                        </p>
+                    </div>
+                `;
+                articlesLoaded = true;
+            }
+        }
+
+        // GitHub Repos API Fetch
         async function fetchGitHubRepos() {
             const container = document.getElementById('github-repos-container');
             const loading = document.getElementById('gh-loading');
